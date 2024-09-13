@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-3</title>
+</head>
+<body>
+    <h1>Calcular Factorial</h1>
+    <label for="numero">Ingrese un número:</label>
+    <input type="number" id="numero" min="0">
+    <button onclick="calcularFactorial()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        // Función para calcular el factorial
+        function factorial(n) {
+            if (n < 0 || !Number.isInteger(n)) {
+                return "El número debe ser un entero no negativo.";
+            }
+
+            if (n === 0) {
+                return 1;
+            }
+
+            let resultado = 1;
+            for (let i = 1; i <= n; i++) {
+                resultado *= i;
+            }
+
+            return resultado;
+        }
+
+        // Función para manejar el cálculo del factorial
+        function calcularFactorial() {
+            // Obtener el valor del input
+            let numero = parseInt(document.getElementById('numero').value);
+
+            // Calcular el factorial
+            let resultado = factorial(numero);
+
+            // Mostrar el resultado en la página
+            document.getElementById('resultado').textContent = "El factorial de " + numero + " es " + resultado + ".";
+        }
+    </script>
+</body>
+</html>

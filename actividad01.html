@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-1</title>
+</head>
+<body>
+    <script>
+        // Solicitar al usuario que ingrese su edad
+        let edadInput = prompt("Ingrese su edad:");
+        let edad = parseInt(edadInput);
+
+        // Solicitar al usuario que ingrese su salario mensual
+        let salarioInput = prompt("Ingrese su salario mensual:");
+        let salario = parseFloat(salarioInput);
+
+        // Verificar si la entrada es un número válido
+        if (isNaN(edad) || isNaN(salario)) {
+            alert("Por favor, ingrese valores numéricos válidos para la edad y el salario.");
+        } else {
+            // Verificar si la edad es mayor a 25 años y el salario es superior a 3000
+            if (edad > 25 && salario > 3000) {
+                alert("Puede aplicar a un crédito bancario.");
+            } else {
+                alert("No cumple con los requisitos para aplicar a un crédito bancario.");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio-2</title>
+</head>
+<body>
+    <script>
+ 
+        // Solicitar al usuario que ingrese un número
+        let input = prompt("Ingrese un número:");
+        let numero = parseInt(input);
+
+        // Verificar si la entrada es un número válido
+        if (isNaN(numero)) {
+            alert("Por favor, ingrese un número válido.");
+        } else {
+            // Verificar si el número es divisible entre 3, 5, o ambos
+            if (numero % 3 === 0 && numero % 5 === 0) {
+                alert("El número es divisible entre 3 y 5.");
+            } else if (numero % 3 === 0) {
+                alert("El número es divisible entre 3.");
+            } else if (numero % 5 === 0) {
+                alert("El número es divisible entre 5.");
+            } else {
+                alert("El número no es divisible ni entre 3 ni entre 5.");
+            }
+
+            // Mostrar una lista de números divisibles entre 3 o 5 en el rango del 1 al número ingresado
+            let numerosDivisibles = [];
+            for (let i = 1; i <= numero; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    numerosDivisibles.push(i);
+                }
+            }
+
+            // Mostrar la lista en una ventana emergente
+            if (numerosDivisibles.length > 0) {
+                alert("Números divisibles entre 3 o 5 en el rango del 1 al " + numero + ": " + numerosDivisibles.join(", "));
+            } else {
+                alert("No hay números divisibles entre 3 o 5 en el rango del 1 al " + numero + ".");
+            }
+        }
+
+    </script>
+</body>
+</html>
